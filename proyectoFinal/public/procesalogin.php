@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Procesando</title>
+	<title>procesando login</title>
 	<meta charset="utf-8">
 </head>
 <body>

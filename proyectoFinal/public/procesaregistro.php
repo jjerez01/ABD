@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Información sobre el alta</title>
+	<title>procesando Registro</title>
 	<meta charset="utf-8">
 </head>
 <body>
