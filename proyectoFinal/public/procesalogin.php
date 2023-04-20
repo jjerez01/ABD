@@ -17,7 +17,7 @@
 				echo "Acceso correcto";
 				header('Location: pageMain.php');
 			}else{
-				echo "Acceso incorrecto, no coinciden las contrasenias";
+				echo "Acceso incorrecto, contraseña o usuario incorrecto";
 			};
 			
     	};
