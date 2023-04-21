@@ -18,6 +18,7 @@
 			$consulta=mysqli_query($db, $sql);
 			if (mysqli_num_rows($consulta)>0){
 				echo "Acceso correcto";
+				$_SESSION['usuario'] = $nombre;
 				header('Location: pageMain.php');
 			}else{
 				echo "Acceso incorrecto, contraseña o usuario incorrecto";

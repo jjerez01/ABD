@@ -7,15 +7,16 @@
 </head>
 <body>
 <?php  
-require_once 'config.php';
-    // TODO $nombre=$_POST['usuario'];
+//require_once 'config.php';
+
     $titulo=$_POST['titulo'];
-    $relato=$_POST['relato'];
+    $texto=$_POST['texto'];
+    session_start();
     $nombre=$_SESSION['usuario'];
     $db = @mysqli_connect('localhost','root','','eljuglar_app');
     if ($db) {
         echo 'Conexión realizada correctamente.<br />';
-        $sql = "INSERT INTO relatos VALUES ('$titulo','$relato','$nombre')";
+        $sql = "INSERT INTO relatos (titulo, texto, usuario) VALUES ('$titulo','$texto','$nombre')";
         if (mysqli_query($db, $sql)) {
             echo "New record created successfully";
             header('Location: pageMain.php');
