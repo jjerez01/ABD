@@ -6,6 +6,9 @@
 </head>
 <body>
 	<?php  
+
+		require_once 'config.php';
+
 		$db = @mysqli_connect('localhost','root','','eljuglar_app');
 		if ($db) {
     		echo 'Conexión realizada correctamente.<br />';

@@ -8,7 +8,7 @@
 	textbox y boton submit
 	<form action="procesaRelato.php" method="post">
 		<input type="text" name="titulo" placeholder="titulo">
-		<textarea id="comentario" name="contenido" rows="4" cols="50" placeholder="Escribe aquí tu relato"></textarea>
+		<textarea id="relato" name="relato" rows="4" cols="50" placeholder="Escribe aquí tu relato"></textarea>
 		<input type="submit" value="enviar">
 </body>
 </html>
