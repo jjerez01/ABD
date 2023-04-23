@@ -7,7 +7,7 @@
 <body>
     <h1>Pagina principal</h1>
     <a href="escribeRelato.php">Escribe un relato</a>
-    <a href="verRelatos.php">Ver relatos</a>
+    <a href="verRelato.php">Ver relatos</a>
     
 </body>
 </html>
