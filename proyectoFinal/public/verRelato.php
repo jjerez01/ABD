@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php
+session_start();
     $db = @mysqli_connect('localhost','root','','eljuglar_app');
     if ($db) {
         echo 'Conexión realizada correctamente.<br />';
@@ -26,7 +27,7 @@
                     echo "<input type='text' name='comentario'>";
                     echo "<input type='submit' value='enviar'>";
                     echo "</form>";
-                     
+                                         
                 }
             } else {
                 echo "0 results";

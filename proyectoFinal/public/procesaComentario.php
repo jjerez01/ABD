@@ -6,12 +6,13 @@
     
 </head>
 <body>
-<?php  
+<?php
+session_start();  
 //require_once 'config.php';
 
     $usuario=$_SESSION['usuario'];
-    $texto=$_POST['texto'];
-    session_start();
+    $texto=$_POST['comentario'];
+    
     $titulo=$_SESSION['titulo'];
     $db = @mysqli_connect('localhost','root','','eljuglar_app');
     if ($db) {
