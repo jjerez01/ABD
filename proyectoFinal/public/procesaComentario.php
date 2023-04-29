@@ -9,7 +9,7 @@
 <?php
 session_start();  
 //require_once 'config.php';
-
+    session_start();
     $usuario=$_SESSION['usuario'];
     $texto=$_POST['comentario'];
     
