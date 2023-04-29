@@ -18,6 +18,7 @@
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
+                    $tit = $row["titulo"];
                     echo " - titulo: " . $row["titulo"] . "<br>";
                     echo " - texto: " . $row["texto"] . "<br>";
                     echo " - usuario: " . $row["usuario"]. "<br>";
@@ -26,10 +27,28 @@
                     echo "<input type='text' name='comentario'>";
                     echo "<input type='submit' value='enviar'>";
                     echo "</form>";
-                     
+                    $sql2 = "SELECT * FROM comentarios WHERE titulo = \"$tit\"";
+                    
+                    if (mysqli_query($db, $sql2)) {
+                        //coger todas las columnas de la tabla relatos e imprimirlas en la página
+                        
+                        $result2 = mysqli_query($db, $sql2);
+                        if (mysqli_num_rows($result2) > 0) {
+                            // output data of each row
+                            while($row2 = mysqli_fetch_assoc($result2)) {
+                                echo " - usuario: " . $row2["usuario"] . "<br>";
+                                echo " - texto: " . $row2["texto"] . "<br>";
+                            }
+                        } else {
+                            echo "no hay comentarios todavia";
+                        }
+                    } else {
+                        ECHO "ERROR EN LA CONSULTA";
+                        echo "Error: " . $sql2 . "<br>" . mysqli_error($db);
+                    };
                 }
             } else {
-                echo "0 results";
+                echo "no hay relatos todavia";
             }
 
         } else {
