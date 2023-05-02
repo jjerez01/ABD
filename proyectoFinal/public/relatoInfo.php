@@ -34,6 +34,13 @@
             echo "ERROR EN LA CONSULTA";
             echo "Error: " . $sql . "<br>" . mysqli_error($db);
         }
+        
+        echo " pon algun comentario: <br>";
+        echo "<form action='procesaComentario.php' method='post'>";
+        echo "<input type='text' name='comentario'>";
+        echo "<input type='submit' value='enviar'>";
+        echo "</form>";
+        
         $sql2 = "SELECT * FROM comentarios C WHERE C.titulo = '$titulo'";
         if (mysqli_query($db, $sql2)) {
             //coger todas las columnas de la tabla relatos e imprimirlas en la página

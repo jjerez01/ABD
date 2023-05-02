@@ -20,7 +20,7 @@ session_start();
         $sql = "INSERT INTO comentarios (usuario, texto, titulo) VALUES ('$usuario','$texto','$titulo')";
         if (mysqli_query($db, $sql)) {
             echo "New record created successfully";
-            header('Location: pageMain.php');
+            header('Location: verRelato.php');
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($db);
         };
