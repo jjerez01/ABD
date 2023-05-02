@@ -12,14 +12,17 @@ session_start();
     if ($db) {
         echo 'Conexión realizada correctamente.<br />';
         $sql = "SELECT * FROM relatos R" /*TODO order ascendant*/ ;
-        if (mysqli_query($db, $sql)) {
+        if (mysqli_query($db, $sql) && mysqli_query($db, $sql2)) {
             //coger todas las columnas de la tabla relatos e imprimirlas en la página
             
             $result = mysqli_query($db, $sql);
+            
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
-                while($row = mysqli_fetch_assoc($result)) {
+                $cont = 0;
+                while($row = mysqli_fetch_assoc($result) && $cont < 5 ) {
                     $tit = $row["titulo"];
+                    $cont++;
                     echo " - titulo: " . $row["titulo"] . "<br>";
                     echo " - texto: " . $row["texto"] . "<br>";
                     echo " - usuario: " . $row["usuario"]. "<br>";
