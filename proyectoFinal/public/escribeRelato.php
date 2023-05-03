@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	textbox y boton submit
-	<form action="procesaRelato.php" method="post">
-		<input type="text" name="titulo" placeholder="titulo">
-		<textarea id="texto" name="texto" rows="4" cols="50" placeholder="Escribe aquí tu relato"></textarea>
+	<h1>Escribe tu relato</h1>
+	<form action="./dao/process/procesaRelato.php" method="post">
+		<input type="text" name="titulo" placeholder="titulo"> <br>
+		<textarea id="texto" name="texto" rows="30" cols="100" placeholder="Escribe aquí tu relato"></textarea> <br>
 		<input type="submit" value="enviar">
 </body>
 </html>

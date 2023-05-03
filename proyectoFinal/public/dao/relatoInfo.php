@@ -35,7 +35,7 @@
         }
         
         echo " pon algun comentario: <br>";
-        echo "<form action='procesaComentario.php' method='post'>";
+        echo "<form action='./process/procesaComentario.php' method='post'>";
         echo "<input type='text' name='comentario'>";
         echo "<input type='submit' value='enviar'>";
         echo "</form>";

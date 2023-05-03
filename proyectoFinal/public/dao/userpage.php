@@ -25,7 +25,7 @@
                     while($row = mysqli_fetch_assoc($result)) {
                         $tit = $row['titulo'];
                         
-                        echo "<a href='relatoInfo.php?id=$tit' method='post'> $tit </a>";
+                        echo "<a href='./relatoInfo.php?id=$tit' method='post'> $tit </a>";
                         echo "<br>";
                     }
                 } else {

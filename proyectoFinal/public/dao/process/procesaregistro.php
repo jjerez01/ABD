@@ -33,12 +33,12 @@
 			$consulta=mysqli_query($db, $sqlcheck);
 			if (mysqli_num_rows($consulta)>0){
 				echo "Ya hay una sesion iniciada <br>";
-				echo "<a href=\"registro.html\"><button>Volver</button></a>";
+				echo "<a href=\"../../registro.html\"><button>Volver</button></a>";
 			}else{
 				$sql = "INSERT INTO usuarios VALUES ('$nombre','$pass')";
 				if (mysqli_query($db, $sql)) {
 					$_SESSION['usuario'] = $nombre;
-					header('Location: pageMain.php');
+					header('Location: ../../pageMain.php');
 				} else {
 					echo "Error: " . $sql . "<br>" . mysqli_error($db);
 				};

@@ -6,20 +6,19 @@
     
 </head>
 <body>
-<?php
-session_start();  
+<?php  
 //require_once 'config.php';
-    session_start();
-    $usuario=$_SESSION['usuario'];
-    $texto=$_POST['comentario'];
+session_start();
+    $titulo=$_POST['titulo'];
+    $texto=$_POST['texto'];
     
-    $titulo=$_SESSION['titulo'];
+    $nombre=$_SESSION['usuario'];
     $db = @mysqli_connect('localhost','root','','eljuglar_app');
     if ($db) {
-        $sql = "INSERT INTO comentarios (usuario, texto, titulo) VALUES ('$usuario','$texto','$titulo')";
+        $sql = "INSERT INTO relatos (titulo, texto, usuario) VALUES ('$titulo','$texto','$nombre')";
         if (mysqli_query($db, $sql)) {
-            header("Location: relatoInfo.php?id=$titulo");
-            die();
+            $_SESSION['titulo'] = $titulo;
+            header('Location: ../../pagemain.php');
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($db);
         };
