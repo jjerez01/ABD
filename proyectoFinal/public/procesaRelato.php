@@ -15,10 +15,8 @@ session_start();
     $nombre=$_SESSION['usuario'];
     $db = @mysqli_connect('localhost','root','','eljuglar_app');
     if ($db) {
-        echo 'Conexión realizada correctamente.<br />';
         $sql = "INSERT INTO relatos (titulo, texto, usuario) VALUES ('$titulo','$texto','$nombre')";
         if (mysqli_query($db, $sql)) {
-            echo "New record created successfully";
             $_SESSION['titulo'] = $titulo;
             header('Location: pageMain.php');
         } else {

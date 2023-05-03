@@ -13,7 +13,6 @@
     $usuarioLector = $_SESSION['usuario'];
     $db = @mysqli_connect('localhost', 'root', '', 'eljuglar_app');
     if ($db) {
-        echo 'Conexión realizada correctamente.<br />';
         $sql = "SELECT * FROM relatos R WHERE R.titulo = '$titulo'";
         if (mysqli_query($db, $sql)) {
             //coger todas las columnas de la tabla relatos e imprimirlas en la página

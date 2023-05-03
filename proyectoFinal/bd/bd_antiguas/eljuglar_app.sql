@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2023 a las 11:03:36
+-- Tiempo de generación: 11-04-2023 a las 10:58:16
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `eljuglar_app`
 --
-CREATE DATABASE IF NOT EXISTS `eljuglar_app` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `eljuglar_app`;
 
 -- --------------------------------------------------------
 
@@ -35,13 +33,6 @@ CREATE TABLE `comentarios` (
   `titulo` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `comentarios`
---
-
-INSERT INTO `comentarios` (`usuario`, `texto`, `titulo`) VALUES
-('juan', 'hola', 'tonti');
-
 -- --------------------------------------------------------
 
 --
@@ -51,15 +42,9 @@ INSERT INTO `comentarios` (`usuario`, `texto`, `titulo`) VALUES
 CREATE TABLE `lecturas` (
   `Usuario` varchar(16) CHARACTER SET utf8mb4 NOT NULL,
   `titulo` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
-  `hora_de_lectura` datetime NOT NULL
+  `hora de lectura` date NOT NULL,
+  `leido` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `lecturas`
---
-
-INSERT INTO `lecturas` (`Usuario`, `titulo`, `hora_de_lectura`) VALUES
-('juan', 'tonti', '2023-05-03 11:02:46');
 
 -- --------------------------------------------------------
 
@@ -73,13 +58,6 @@ CREATE TABLE `relatos` (
   `usuario` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `relatos`
---
-
-INSERT INTO `relatos` (`titulo`, `texto`, `usuario`) VALUES
-('tonti', 'bobi', 'juan');
-
 -- --------------------------------------------------------
 
 --
@@ -90,13 +68,6 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(16) NOT NULL,
   `contrasenia` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`usuario`, `contrasenia`) VALUES
-('juan', 'juan');
 
 --
 -- Índices para tablas volcadas

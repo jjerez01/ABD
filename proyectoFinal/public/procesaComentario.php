@@ -16,11 +16,10 @@ session_start();
     $titulo=$_SESSION['titulo'];
     $db = @mysqli_connect('localhost','root','','eljuglar_app');
     if ($db) {
-        echo 'Conexión realizada correctamente.<br />';
         $sql = "INSERT INTO comentarios (usuario, texto, titulo) VALUES ('$usuario','$texto','$titulo')";
         if (mysqli_query($db, $sql)) {
-            echo "New record created successfully";
-            header('Location: verRelato.php');
+            header("Location: relatoInfo.php?id=$titulo");
+            die();
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($db);
         };

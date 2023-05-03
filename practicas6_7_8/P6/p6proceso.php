@@ -8,7 +8,7 @@
 	<?php  
 		$db = @mysqli_connect('localhost','root','','p6');
 		if ($db) {
-    		echo 'Conexión realizada correctamente.<br />';
+    		
     		$nombre=$_POST['nombre'];
 			$pass=$_POST['pass'];
 			$sql="SELECT * FROM usuarios WHERE usuario='$nombre' AND password = '$pass'";
