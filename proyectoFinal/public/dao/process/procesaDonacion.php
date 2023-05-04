@@ -9,15 +9,16 @@
 <?php
 session_start();  
 //require_once 'config.php';
-    $usuario=$_SESSION['usuario'];
-    $texto=$_POST['comentario'];
-    
+    $donante=$_SESSION['usuario'];
+    $donado=$_POST['donado'];
+    $cantidad=$_POST['cantidad'];
     $titulo=$_POST['titulo'];
     $db = @mysqli_connect('localhost','root','','eljuglar_app');
     if ($db) {
-        $sql = "INSERT INTO comentarios (usuario, texto, titulo) VALUES ('$usuario','$texto','$titulo')";
+        $sql = "INSERT INTO donaciones (donante, donado, cantidad) VALUES ('$donante','$donado','$cantidad')";
         if (mysqli_query($db, $sql)) {
             header("Location: ../relatoInfo.php?id=$titulo");
+
             die();
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($db);

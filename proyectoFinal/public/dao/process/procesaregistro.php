@@ -8,7 +8,7 @@
 
 <body>
 	<?php
-
+	session_start();
 	$nombre = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 	if (!$nombre || empty($nombre = trim($nombre))) {
 		$this->errores['usuario'] = 'El nombre de usuario no puede estar vacío';

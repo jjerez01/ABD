@@ -10,6 +10,7 @@
 <body>
     <?php
     session_start();
+    echo "<h1>Relatos mas populares</h1>";
     $db = @mysqli_connect('localhost', 'root', '', 'eljuglar_app');
     if ($db) {
         $sql = "SELECT * FROM relatos R" /*TODO order ascendant*/;
@@ -28,10 +29,11 @@
 
                         echo " - titulo: " . $row["titulo"] . "<br>";
                         echo " - usuario: " . $row["usuario"] . "<br>";
-                        echo " - texto: " . $row["texto"] . "<br>";
+                        echo $row["texto"] . "<br>";
 
 
                         $sql2 = "SELECT * FROM comentarios WHERE titulo = \"$tit\"";
+                        echo "<h2>Comentarios: </h2>";
 
                         if (mysqli_query($db, $sql2)) {
                             //coger todas las columnas de la tabla relatos e imprimirlas en la página
@@ -40,12 +42,11 @@
                             if (mysqli_num_rows($result2) > 0) {
                                 // output data of each row
                                 while ($row2 = mysqli_fetch_assoc($result2)) {
-                                    echo "Comentarios: ";
                                     echo " - usuario: " . $row2["usuario"] . "<br>";
-                                    echo " - texto: " . $row2["texto"] . "<br>";
+                                    echo $row2["texto"] . "<br>";
                                 }
                             } else {
-                                echo "no hay comentarios todavia";
+                                echo "no hay comentarios todavia <br>";
                             }
                         } else {
                             echo "ERROR EN LA CONSULTA";
@@ -54,7 +55,7 @@
                     }
                 }
             } else {
-                echo "no hay relatos todavia";
+                echo "no hay relatos todavia <br>";
             }
         } else {
             echo "ERROR EN LA CONSULTA";

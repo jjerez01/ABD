@@ -29,13 +29,16 @@
                         echo "<br>";
                     }
                 } else {
-                    echo "no hay relatos todavia";
+                    echo "no hay relatos todavia <br>";
                 }
 
             } else {
                 ECHO "ERROR EN LA CONSULTA";
                 echo "Error: " . $sql . "<br>" . mysqli_error($db);
             }
+
+            
+
             @mysqli_close($db);
         }else{
             echo "CONEXION NO ESTABLECIDA CORRECTAMENTE";

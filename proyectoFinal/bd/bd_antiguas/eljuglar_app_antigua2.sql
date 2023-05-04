@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2023 a las 22:53:51
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 03-05-2023 a las 11:03:36
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `eljuglar_app`
 --
+CREATE DATABASE IF NOT EXISTS `eljuglar_app` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `eljuglar_app`;
 
 -- --------------------------------------------------------
 
@@ -38,35 +40,7 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`usuario`, `texto`, `titulo`) VALUES
-('juan', '', 'en tu casa o en mi casa'),
-('juan', 'ayaya', 'en tu casa o en mi casa'),
-('juan', 'hola', 'tonti'),
-('juan', 'HOLAHOLA', 'tonti'),
-('juan', 'que es este relato madre mia ya nadie piensa en los niños', 'en tu casa o en mi casa');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `donaciones`
---
-
-CREATE TABLE `donaciones` (
-  `donante` varchar(16) CHARACTER SET utf8mb4 NOT NULL,
-  `donado` varchar(16) CHARACTER SET utf8mb4 NOT NULL,
-  `cantidad` int(11) NOT NULL,
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `donaciones`
---
-
-INSERT INTO `donaciones` (`donante`, `donado`, `cantidad`, `id`) VALUES
-('test', 'juan', 12, 2),
-('test', 'juan', 13, 3),
-('test', 'juan', 14, 4),
-('test', 'juan', 34, 5),
-('juan', 'juan', 22, 6);
+('juan', 'hola', 'tonti');
 
 -- --------------------------------------------------------
 
@@ -85,9 +59,7 @@ CREATE TABLE `lecturas` (
 --
 
 INSERT INTO `lecturas` (`Usuario`, `titulo`, `hora_de_lectura`) VALUES
-('juan', 'en tu casa o en mi casa', '2023-05-04 22:51:35'),
-('juan', 'tonti', '2023-05-04 21:29:05'),
-('test', 'tonti', '2023-05-04 21:22:50');
+('juan', 'tonti', '2023-05-03 11:02:46');
 
 -- --------------------------------------------------------
 
@@ -106,7 +78,6 @@ CREATE TABLE `relatos` (
 --
 
 INSERT INTO `relatos` (`titulo`, `texto`, `usuario`) VALUES
-('en tu casa o en mi casa', 'erase una vez un gato que andaba por su casa y hacia muuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu despues de comer se fue a la predera con sus amigas las vacas', 'juan'),
 ('tonti', 'bobi', 'juan');
 
 -- --------------------------------------------------------
@@ -125,8 +96,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario`, `contrasenia`) VALUES
-('juan', 'juan'),
-('test', 'test');
+('juan', 'juan');
 
 --
 -- Índices para tablas volcadas
@@ -140,13 +110,6 @@ ALTER TABLE `comentarios`
   ADD KEY `titulo` (`titulo`),
   ADD KEY `usuario` (`usuario`),
   ADD KEY `titulo_2` (`titulo`);
-
---
--- Indices de la tabla `donaciones`
---
-ALTER TABLE `donaciones`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `donado` (`donado`);
 
 --
 -- Indices de la tabla `lecturas`
@@ -170,16 +133,6 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`usuario`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `donaciones`
---
-ALTER TABLE `donaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- Restricciones para tablas volcadas
 --
 
@@ -189,13 +142,6 @@ ALTER TABLE `donaciones`
 ALTER TABLE `comentarios`
   ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`usuario`),
   ADD CONSTRAINT `comentarios_ibfk_3` FOREIGN KEY (`titulo`) REFERENCES `relatos` (`titulo`);
-
---
--- Filtros para la tabla `donaciones`
---
-ALTER TABLE `donaciones`
-  ADD CONSTRAINT `donaciones_ibfk_1` FOREIGN KEY (`donado`) REFERENCES `usuarios` (`usuario`),
-  ADD CONSTRAINT `donaciones_ibfk_2` FOREIGN KEY (`donante`) REFERENCES `usuarios` (`usuario`);
 
 --
 -- Filtros para la tabla `lecturas`

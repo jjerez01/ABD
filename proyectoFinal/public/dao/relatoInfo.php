@@ -27,7 +27,7 @@
                 echo "<h2>autor: $usuario</h2>";
                 echo "<p>$texto</p>";
             } else {
-                echo "no hay relatos todavia";
+                echo "no hay relatos todavia <br>";
             }
         } else {
             echo "ERROR EN LA CONSULTA";
@@ -36,8 +36,9 @@
         
         echo " pon algun comentario: <br>";
         echo "<form action='./process/procesaComentario.php' method='post'>";
-        echo "<input type='text' name='comentario'>";
+        echo "<textarea id='comentario' name='comentario' rows='3' cols='30' placeholder='comenta'></textarea> <br>";
         echo "<input type='submit' value='enviar'>";
+        echo "<input type='hidden' name='titulo' value='$titulo'>";
         echo "</form>";
         
         $sql2 = "SELECT * FROM comentarios C WHERE C.titulo = '$titulo'";
@@ -53,7 +54,7 @@
                     echo "<p>$comentario</p>";
                 }
             } else {
-                echo "no hay comentarios todavia";
+                echo "no hay comentarios todavia <br>";
             }
         } else {
             echo "ERROR EN LA CONSULTA";
@@ -67,6 +68,15 @@
         } else {
             echo "Error: " . $sql3 . "<br>" . mysqli_error($db);
         }
+
+        echo "<h2>Donaciones: <h2> <br>";
+        echo "<form action='./process/procesaDonacion.php' method='post'>";
+        echo "<input type='hidden' name='donado' value='$usuario'>";
+        echo "<input type='hidden' name='titulo' value='$titulo'>";
+        echo "<input type='text' name='cantidad'>";
+        echo "<input type='submit' value='enviar'>";
+        echo "</form>";
+        
     } else {
         echo "CONEXION NO ESTABLECIDA CORRECTAMENTE";
     }

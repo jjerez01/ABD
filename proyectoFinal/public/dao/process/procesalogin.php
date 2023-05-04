@@ -7,7 +7,7 @@
 <body>
 	<?php  
 
-
+		session_start();
 		$db = @mysqli_connect('localhost','root','','eljuglar_app');
 		if ($db) {
     		$nombre=$_POST['usuario'];
