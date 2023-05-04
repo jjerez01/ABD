@@ -3,6 +3,7 @@
 <head>
 	<title>Pagina de usuario</title>
 	<meta charset="utf-8">
+    <link rel="stylesheet" href=".././css/userpage.css">
 </head>
 <body>
     <?php

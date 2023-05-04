@@ -3,23 +3,23 @@
 <head>
 	<title>registro elJuglar</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="./css/registro.css">
 </head>
 <body>
-	<form action="./conexion/process/procesaregistro.php" method="post">
-		<fieldset>
-			<legend>Datos personales: </legend>
-			<table>
-				<tr><td>Nombre</td><td><input type="text" name="usuario"></td></tr>
-				<tr><td>Contraseña</td><td><input type="password" name="contrasenia"></td></tr>
-                <tr><td>Repite la contraseña</td><td><input type="password" name="ncontrasenia"></td></tr>
-			</table>
-			<input type="submit" name="OK" value = "Registrarse">
-			
-		</fieldset>
-	</form>
-    <p>¿Ya tienes una sesion iniciada?</p>
-    <a href="./index.html"><button>Iniciar Sesion</button></a>
-	
-
+	<div class="container">
+		<form action="./conexion/process/procesaregistro.php" method="post">
+			<fieldset>
+				<legend>Datos personales: </legend>
+				<table>
+					<tr><td>Nombre</td><td><input type="text" name="usuario"></td></tr>
+					<tr><td>Contraseña</td><td><input type="password" name="contrasenia"></td></tr>
+                    <tr><td>Repite la contraseña</td><td><input type="password" name="ncontrasenia"></td></tr>
+				</table>
+				<input type="submit" name="OK" value="Registrarse">
+			</fieldset>
+		</form>
+		<p>¿Ya tienes una sesión iniciada?</p>
+		<a href="./index.html"><button>Iniciar Sesión</button></a>
+	</div>
 </body>
 </html>

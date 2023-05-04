@@ -1,0 +1,75 @@
+/* estilos para el título del relato */
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  /* estilos para el autor */
+  h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-top: 0;
+    color: #666;
+  }
+  
+  /* estilos para el contenido del relato */
+  p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 2em;
+  }
+  
+  /* estilos para el formulario de comentarios */
+  form {
+    margin-top: 2em;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+  }
+  
+  textarea {
+    font-size: 1em;
+    padding: 0.5em;
+    width: 100%;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  
+  /* estilos para los comentarios */
+  h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  .comentario {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+  .comentario p {
+    margin: 0;
+  }
+  
+  /* estilos para las donaciones */
+  h2.donaciones {
+    margin-top: 3em;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  input[name="cantidad"] {
+    width: 4em;
+  }
+  

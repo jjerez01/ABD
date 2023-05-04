@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
 <html lang="es">
-<head>
-	<title>Acceso a la app elJuglar</title>
-	<meta charset="utf-8">
-</head>
+	<head>
+		<title>Acceso a la app elJuglar</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="./css/index.css">
+	  </head>
+	  
 <body>
-	<form action="./conexion/process/procesalogin.php" method="post">
+	<!-- <form action="./conexion/process/procesalogin.php" method="post">
 		<fieldset>
 			<legend>Datos personales: </legend>
 			<table>
@@ -17,7 +19,21 @@
 			<input type="submit" name="OK" value = "Iniciar Sesion">
 			
 		</fieldset>  	
-	</form>
+	</form> -->
+	<form action="./conexion/process/procesalogin.php" method="post">
+		<div class="form-group">
+		  <label for="usuario">Nombre:</label>
+		  <input type="text" name="usuario" id="usuario">
+		</div>
+		<div class="form-group">
+		  <label for="contrasenia">Contraseña:</label>
+		  <input type="password" name="contrasenia" id="contrasenia">
+		</div>
+		<div class="form-group">
+		  <input type="submit" name="OK" value="Iniciar Sesion">
+		</div>
+	  </form>
+	  
 	<p>¿Aun no tienes cuenta?</p>
 	<a href="./registro.html"><button>Registrarse</button></a>
 	

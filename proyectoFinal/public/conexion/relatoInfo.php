@@ -2,9 +2,11 @@
 <html lang="es">
 
 <head>
-    <title>relato</title>
-    <meta charset="utf-8">
+  <title>relato</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href=".././css/relatoInfo.css">
 </head>
+
 
 <body>
     <?php
