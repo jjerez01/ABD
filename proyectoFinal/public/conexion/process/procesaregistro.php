@@ -11,16 +11,16 @@
 	session_start();
 	$nombre = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 	if (!$nombre || empty($nombre = trim($nombre))) {
-		$this->errores['usuario'] = 'El nombre de usuario no puede estar vacío';
+		echo "El nombre de usuario no puede estar vacío";
 	}
 
 	$pass = filter_input(INPUT_POST, 'contrasenia', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 	if (!$pass || empty($pass = trim($pass))) {
-		$this->errores['contrasenia'] = 'El password no puede estar vacío.';
+		echo "El password no puede estar vacío.";
 	}
 	$npass = filter_input(INPUT_POST, 'ncontrasenia', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 	if (!$npass || empty($npass = trim($npass))) {
-		$this->errores['ncontrasenia'] = 'El password no puede estar vacío.';
+		echo "El password no puede estar vacío.";
 	}
 	if ($pass == $npass) {
 		//Damos de alta la información
@@ -44,6 +44,8 @@
 				};
 			};
 			@mysqli_close($db);
+		}else{
+			echo "CONEXION NO ESTABLECIDA CORRECTAMENTE";
 		}
 	} else {
 		echo "Las constaseñas no coinciden";
